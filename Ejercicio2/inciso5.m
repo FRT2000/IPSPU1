@@ -1,5 +1,7 @@
 [x, fs] = audioread('audio.wav');
 
+y = sistema(x)
+
 %filtro con 2 ramas
 y2 = filtro_2ramas(y);
 plotSignal(x,y2,'Salida filtrada con 2 ramas (canal izq.)', 'Salida filtrada con 2 ramas (canal der.)');

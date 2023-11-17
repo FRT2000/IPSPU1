@@ -1,5 +1,13 @@
-% Gráficas de las salidas y sus TFTDs de los sistemas con la entrada x[n].
+% Gráficas de las respuestas impulsionales y en frecuencia de cada uno de
+% los sistemas.
 
+numero_alumno = 19648;
+
+% Salida de la funcion senial en [n,x]
+[n,x] = senial(numero_alumno);
+
+% Delta de Kronecker
+delta = [1 zeros(1,100)];
 % Instanciacion de los sistemas
 y1 = sistema1(x);
 y2 = sistema2(x);
