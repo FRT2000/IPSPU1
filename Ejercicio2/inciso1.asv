@@ -1,0 +1,5 @@
+[numal, hall] = hcanald(26756);
+stem(numal, hall);
+title('Respuesta impulsional');
+xlabel('n');
+ylabel('h[n]');
