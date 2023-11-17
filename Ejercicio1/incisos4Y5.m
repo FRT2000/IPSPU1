@@ -1,5 +1,4 @@
-% Gráficas de las respuestas impulsionales y en frecuencia de cada uno de
-% los sistemas.
+% Gráficas de las salidas y sus TFTDs de los sistemas con la entrada x[n].
 
 numero_alumno = 19648;
 

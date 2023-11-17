@@ -1,13 +1,14 @@
 delta = [1 1;zeros(348380,2)];
 
-y2 = sistema(delta);
+h = sistema(delta);
 
-y2(1);
-y2(8821);
-y2(17641);
+h(1);
+h(8821);
+h(17641);
 
 n = (0:1:348380);
-
-stem(n,y2,'o');
+figure;
+stem(n, h);
+title('Verificación de la Respuesta impulsional');
 xlabel('n');
-ylabel('y[n]');
+ylabel('h[n]');
