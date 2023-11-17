@@ -1,0 +1,6 @@
+% Implementa el sistema: y[n]= x[n] - 0.5*x[n-8820] + 0.25*x[n-17640] 
+function y = sistema(x)
+    A = length(x) - 8820;
+    B = length(x) - 17640;
+    y = x - 0.5 * [zeros(1, 8820), x(1:end-8)] + 0.25 * [zeros(1, 17640), x(1:end-B)];
+end
