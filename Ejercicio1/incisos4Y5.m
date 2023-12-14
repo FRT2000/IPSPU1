@@ -4,22 +4,23 @@ numero_alumno = 19648;
 
 % Salida de la funcion senial en [n,x]
 [n,x] = senial(numero_alumno);
+ds = 0.001;
+s = -0.5:ds:0.5;
 
-% Delta de Kronecker
-delta = [1 zeros(1,100)];
 % Instanciacion de los sistemas
 y1 = sistema1(x);
 y2 = sistema2(x);
 y3 = sistema3(x);
 y4 = sistema4(x);
 
+% Obtención de las TFTD's
 Y1 = tftd(y1);
 Y2 = tftd(y2);
 Y3 = tftd(y3);
 Y4 = tftd(y4);
 
 % Plot de las salidas de los sistemas
-Sistemas =  figure;
+figure;
 subplot(2,2,1);
 stem(n,y1,'o');
 title('Sistema 1');
@@ -45,10 +46,8 @@ xlabel('n');
 ylabel('y4[n]');
 
 % Plot TFTD del sistema 1
-TFTD_Sistema1 =  figure;
+figure;
 subplot(2,1,1);
-ds = 0.001;
-s = [-2:ds:2];
 
 plot(s,abs(Y1));
 title('Sistema 1 [Módulo]');
@@ -59,10 +58,8 @@ title('Sistema 1 [Fase]');
 ylabel('Φ(Y1(e^j^2^π^s)');
 
 % Plot TFTD del sistema 2
-TFTD_Sistema2 =  figure;
+figure;
 subplot(2,1,1);
-ds = 0.001;
-s = [-2:ds:2];
 
 plot(s,abs(Y2));
 title('Sistema 2 [Módulo]');
@@ -73,10 +70,8 @@ title('Sistema 2 [Fase]');
 ylabel('Φ(Y2(e^j^2^π^s)');
 
 % Plot TFTD del sistema 3
-TFTD_Sistema3 =  figure;
+figure;
 subplot(2,1,1);
-ds = 0.001;
-s = [-2:ds:2];
 
 plot(s,abs(Y3));
 title('Sistema 3 [Módulo]');
@@ -87,10 +82,8 @@ title('Sistema 3 [Fase]');
 ylabel('Φ(Y3(e^j^2^π^s)');
 
 % Plot TFTD del sistema 4
-TFTD_Sistema4 =  figure;
+figure;
 subplot(2,1,1);
-ds = 0.001;
-s = [-2:ds:2];
 
 plot(s,abs(Y4));
 title('Sistema 4 [Módulo]');

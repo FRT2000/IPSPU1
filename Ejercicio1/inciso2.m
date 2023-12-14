@@ -19,6 +19,7 @@ stem(n, h1, 'o');
 title('Respuesta Impulsional 1');
 xlabel('n');
 ylabel('h1[n]');
+yticks(0:0.1:1);
 
 % Respuesta en frecuencia 1
 subplot(2,2,3);
