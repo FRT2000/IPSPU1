@@ -28,7 +28,7 @@ plot(s, m);
 title('Módulo de la TFTD');
 xlabel('s');
 ylabel('|X(e^{j2\pi s})|');
-xlim([-2, 2]); % Ajusta los límites del eje x
+xlim([-0.5, 0.5]); % Ajusta los límites del eje x
 
 % Plot de la fase de la TFTD
 subplot(2, 2, 4);
@@ -36,7 +36,7 @@ plot(s, p);
 title('Fase de la TFTD');
 xlabel('s');
 ylabel('\angle X(e^{j2\pi s})');
-xlim([-2, 2]); % Ajusta los límites del eje x
+xlim([-0.5, 0.5]); % Ajusta los límites del eje x
 
 % TFTD de senial
 function TFTD_S = TFTD_senial(x, n, s)
