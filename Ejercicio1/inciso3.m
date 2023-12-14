@@ -1,16 +1,31 @@
-n = 0:100;
-ds = 0.001;
-s = -0.5:ds:0.5;
+% Gráficas de las respuestas impulsionales y en frecuencia de cada uno de
+% los sistemas.
 
-h1 = resp_imp1(n);
-h2 = resp_imp2(n);
-h3 = resp_imp3(n);
-h4 = resp_imp4(n);
+numero_alumno = 19648;
 
-H1 = resp_frec1(s);
-H2 = resp_frec2(s);
-H3 = resp_frec3(s);
-H4 = resp_frec4(s);
+% Salida de la función senial en [n,x]
+[n,x] = senial(numero_alumno);
+
+% Delta de Kronecker
+delta = [1 zeros(1,100)];
+
+% Instanciación de los sistemas
+y1 = sistema1(x);
+y2 = sistema2(x);
+y3 = sistema3(x);
+y4 = sistema4(x);
+
+% Respuestas impulsionales
+h1 = sistema1(delta);
+h2 = sistema2(delta);
+h3 = sistema3(delta);
+h4 = sistema4(delta);
+
+% Respuestas en frecuencia
+H1 = frecuencia_impulsional(h1);
+H2 = frecuencia_impulsional(h2);
+H3 = frecuencia_impulsional(h3);
+H4 = frecuencia_impulsional(h4);
 
 % Respuesta impulsional 1
 figure;
@@ -19,9 +34,12 @@ stem(n, h1, 'o');
 title('Respuesta Impulsional 1');
 xlabel('n');
 ylabel('h1[n]');
+yticks(0:0.1:1);
 
 % Respuesta en frecuencia 1
 subplot(2,2,3);
+ds = 0.001;
+s = [-0.5:ds:0.5];
 plot(s, abs(H1));
 title('Respuesta en Frecuencia [Módulo]');
 ylabel('|H1(e^{j2\pi s})|');
@@ -66,7 +84,7 @@ plot(s, unwrap(angle(H3)));
 title('Respuesta en Frecuencia [Fase]');
 ylabel('\phi(H3(e^{j2\pi s}))');
 
-%Respuesta impulsional 4
+% Respuesta impulsional 4
 figure;
 subplot(2,2,[1 2]);
 stem(n, h4, 'o');
@@ -74,7 +92,7 @@ title('Respuesta Impulsional 4');
 xlabel('n');
 ylabel('h4[n]');
 
-%Respuesta en frecuencia 4
+% Respuesta en frecuencia 4
 subplot(2,2,3);
 plot(s, abs(H4));
 title('Respuesta en Frecuencia [Módulo]');

@@ -5,7 +5,7 @@ numero_alumno = 19648;
 [n, x] = senial(numero_alumno);
 
 ds = 0.001;
-s = -2:ds:2;
+s = -0.5:ds:0.5;
 
 TFTD_S = TFTD_senial(x, n, s);
 
