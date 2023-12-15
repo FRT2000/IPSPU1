@@ -2,11 +2,13 @@ n = 0:100;
 ds = 0.001;
 s = -0.5:ds:0.5;
 
+% Obtención de respuestas impulsionales
 h1 = resp_imp1(n);
 h2 = resp_imp2(n);
 h3 = resp_imp3(n);
 h4 = resp_imp4(n);
 
+% Obtención de respuestas en frecuencia
 H1 = resp_frec1(s);
 H2 = resp_frec2(s);
 H3 = resp_frec3(s);
@@ -19,7 +21,6 @@ stem(n, h1, 'o');
 title('Respuesta Impulsional 1');
 xlabel('n');
 ylabel('h1[n]');
-yticks(0:0.1:1);
 
 % Respuesta en frecuencia 1
 subplot(2,2,3);
@@ -67,7 +68,7 @@ plot(s, unwrap(angle(H3)));
 title('Respuesta en Frecuencia [Fase]');
 ylabel('\phi(H3(e^{j2\pi s}))');
 
-%Respuesta impulsional 4
+% Respuesta impulsional 4
 figure;
 subplot(2,2,[1 2]);
 stem(n, h4, 'o');
@@ -75,7 +76,7 @@ title('Respuesta Impulsional 4');
 xlabel('n');
 ylabel('h4[n]');
 
-%Respuesta en frecuencia 4
+% Respuesta en frecuencia 4
 subplot(2,2,3);
 plot(s, abs(H4));
 title('Respuesta en Frecuencia [Módulo]');

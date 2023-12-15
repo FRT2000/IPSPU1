@@ -4,22 +4,8 @@ n = 0:100;
 ds = 0.001;
 s = -0.5:ds:0.5;
 
-%Delta de Kronecker
+% Delta de Kronecker
 d = delta(n);
-
-% Respuestas impulsionales
-% obtenidas de manera analítica
-h1a = resp_imp1(n);
-h2a = resp_imp2(n);
-h3a = resp_imp3(n);
-h4a = resp_imp4(n);
-
-% Respuestas en frecuencia
-% obtenidas de manera analítica
-H1a = resp_frec1(s);
-H2a = resp_frec2(s);
-H3a = resp_frec3(s);
-H4a = resp_frec4(s);
 
 % Respuestas impulsionales
 % obtenidas ingresando una delta al sistema
@@ -34,6 +20,20 @@ H1 = tftd(h1);
 H2 = tftd(h2);
 H3 = tftd(h3);
 H4 = tftd(h4);
+
+% Respuestas impulsionales
+% obtenidas de manera analítica
+h1a = resp_imp1(n);
+h2a = resp_imp2(n);
+h3a = resp_imp3(n);
+h4a = resp_imp4(n);
+
+% Respuestas en frecuencia
+% obtenidas de manera analítica
+H1a = resp_frec1(s);
+H2a = resp_frec2(s);
+H3a = resp_frec3(s);
+H4a = resp_frec4(s);
 
 % Comparación de la respuestas impulsionales 
 % obtenidas para el sistema 1
