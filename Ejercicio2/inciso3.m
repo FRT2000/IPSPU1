@@ -1,5 +1,5 @@
 % Ver información del archivo de audio
-% Especificamente, la cantidad de columnas
+% para averiguar la cantidad de canales del mismo
 info = audioinfo('audio.wav');
 disp(info);
 
