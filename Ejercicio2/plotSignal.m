@@ -1,11 +1,12 @@
 %y = sistema(x)
 function plotSignal (x,y, titulo_l, titulo_r)
-
-    figure;
-
     x_l = x(:,1);
     x_r = x(:,2);
+    
+    y_r = y(:,1);
+    y_l = y(:,2);
 
+    figure;
     subplot(2,2,1);
     plot(x_l)
     title('Entrada (canal izquierdo)');
@@ -18,9 +19,6 @@ function plotSignal (x,y, titulo_l, titulo_r)
     xlabel('n');
     ylabel('y[n]');
 
-    y_r = y(:,1);
-    y_l = y(:,2);
-
     subplot(2,2,3);
     plot(y_l)
     title(titulo_l);
@@ -32,5 +30,4 @@ function plotSignal (x,y, titulo_l, titulo_r)
     title(titulo_r);
     xlabel('n');
     ylabel('yf[n]');
-
 end
