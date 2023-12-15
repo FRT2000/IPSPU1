@@ -5,5 +5,8 @@ inciso1
 % los sistemas.
 inciso2
 
+% Verificación de las respuestas impulsionales obtenidas analíticamente
+inciso3
+
 % Gráficas de las salidas y sus TFTDs de los sistemas con la entrada x[n].
 incisos4Y5
